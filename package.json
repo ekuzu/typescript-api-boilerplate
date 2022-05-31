@@ -9,9 +9,8 @@
     "nodemon": "^2.0.16"
   },
   "scripts": {
-    "build": "tsc -w",
+    "build": "tsc",
     "dev": "export NODE_ENV=local && nodemon --inspect build/server.js",
-    "prestart": "tsc",
     "start": "node build/server.js"
   },
   "name": "typescript-api-boilerplate",
