@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc -w",
     "dev": "export NODE_ENV=local && nodemon --inspect build/server.js",
-    "prestart": "tsc -w",
+    "prestart": "tsc",
     "start": "node build/server.js"
   },
   "name": "typescript-api-boilerplate",
