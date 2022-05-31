@@ -2,7 +2,7 @@ import { fastify, FastifyInstance, FastifyRequest } from 'fastify'
 import config from './config'
 import pino from 'pino'
 import { loadRoutes } from './routes/v1'
-
+console.log(process.env.NODE_ENV)
 const server = fastify({
   logger: pino({ level: 'info' })
 })
@@ -25,7 +25,7 @@ loadRoutes(server)
 
 const start = async () => {
   try {
-    await server.listen(config.PORT)
+    await server.listen(config.PORT, '0.0.0.0')
     console.info(`Server started successfully on ${config.PORT}`)
   } catch (err) {
     server.log.error(err)
